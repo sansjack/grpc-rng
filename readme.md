@@ -1,5 +1,3 @@
-## gRPC Random Number Function Using Python
-
 # What is this?
 gRPC (Google Remote Procedure Call) is an open-source framework created by Google for calling functions on remote servers.
 
