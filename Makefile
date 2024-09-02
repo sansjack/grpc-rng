@@ -4,7 +4,6 @@ generate:
 run:
 	python src/main.py
 
-
 install:
 	pip install --no-cache-dir -r requirements.txt
 docker-run:
