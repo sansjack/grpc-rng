@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+service RandomNumberService {
+  rpc generateRandomNumber (RandomNumberRequest) returns (RandomNumberReply) {}
+}
+
+message RandomNumberRequest {}
+
+message RandomNumberReply {
+  int32 number = 1;
+}
