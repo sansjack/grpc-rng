@@ -1,4 +1,4 @@
-## gRPC Python
+## gRPC Random Number Function Using Python
 
 ## How To Run Locally 🏠
 - install [BloomRPC](https://github.com/bloomrpc/bloomrpc) and import the `rng.proto` file
