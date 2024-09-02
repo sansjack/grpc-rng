@@ -1,7 +1,7 @@
 ## gRPC Python
 
 ## How To Run Locally
-- install BloomRPC and import the rng.proto file
+- install BloomRPC and import the `rng.proto` file
 - install python (im using 3.12)
 - `make install`
 - run `make run`
