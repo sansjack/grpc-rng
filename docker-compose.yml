@@ -1,6 +1,6 @@
 services:
-  postgres:
-    container_name: postgres
+  db:
+    container_name: db
     image: postgres:latest
     environment:
       POSTGRES_USER: username
@@ -13,8 +13,12 @@ services:
 
   grpc:
     container_name: grpc
+
     depends_on:
-      - postgres
+      - db
+    links:
+      - db
+
     env_file:
       - .env
     build:
