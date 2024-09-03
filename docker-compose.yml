@@ -1,6 +1,7 @@
 services:
   db:
     container_name: db
+    restart: always
     image: postgres:latest
     environment:
       POSTGRES_USER: username
@@ -10,15 +11,17 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U username']
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   grpc:
     container_name: grpc
-
-    depends_on:
-      - db
+    restart: always
     links:
       - db
-
     env_file:
       - .env
     build:
@@ -26,6 +29,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - '50051:50051'
+    depends_on:
+      db:
+        condition: service_healthy
 
 volumes:
   postgres_data:
