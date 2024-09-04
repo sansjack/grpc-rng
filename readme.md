@@ -1,7 +1,7 @@
 # What is this?
 gRPC (Google Remote Procedure Call) is an open-source framework created by Google for calling functions on remote servers.
 
-This example, create a gRPC server using python by taking a pre-existing proto file declaration and generates us a proto file for python which we can use to create a server. We generate these python proto files by using the grpcio-tools, i have added the command, used to the `Makefile` and it can be called by running `make generate`. The server is containerised inside a docker compose network aslongside a postgres database which we use to store the random numbers after each function invocation.
+This example, create a gRPC server using python by taking a pre-existing proto file declaration and generates use a proto file for python which we can use to create a server. We generate these python proto files by using the grpcio-tools, i have added the command, used to the `Makefile` and it can be called by running `make generate`. The server is containerised inside a docker compose network aslongside a postgres database which we use to store the random numbers after each function invocation.
 
 In the example we use BloomRPC to call the functions and get the result, this is really just for testing. In the "real world" (production) we would use a gRPC client to call these functions which simply offloads the compute from the client to this server.. Voilà!
 
